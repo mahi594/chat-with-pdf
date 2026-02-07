@@ -237,6 +237,11 @@ def build_phase4_links(pdf_path, output_json_path):
         for page_no, page in enumerate(pdf.pages, start=1):
 
             print(f"➡️ Universal Linking Page {page_no}/{total_pages}")
+            
+            try:
+                page_full_text = page.extract_text(layout=True) or ""
+            except:
+                page_full_text = ""
 
             words = page.extract_words()    #Extracts all words with coordinates
             lines = group_words_into_lines(words)
@@ -254,7 +259,7 @@ def build_phase4_links(pdf_path, output_json_path):
                    next_line = lines[i + 1]["text"].strip()
 
                     # If next line looks like a caption title
-                   if len(next_line) < 120 and (next_line.isupper() or next_line.istitle()):
+                   if len(next_line) < 140 and (next_line.isupper() or next_line.istitle()):
                        full_caption += " " + next_line
 
                 cap["caption"] = full_caption
@@ -326,6 +331,7 @@ def build_phase4_links(pdf_path, output_json_path):
 
             output["pages"].append({
                 "page": page_no,
+                "page_full_text": page_full_text.strip(),
                 "captions_found": captions,
                 "tables_found": tables,
                 "images_found": images,
