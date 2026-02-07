@@ -36,23 +36,28 @@ def preprocess_for_ocr(pil_image):
 # ---------------- Caption detection ----------------
 #Detects whether a line is a caption or not.
 def detect_caption(text):
-    t = text.strip()
+    text = text.strip()
 
-    table_match = re.match(r"^(table)\s*([ivx0-9]+)", t, re.IGNORECASE)
+    # Match TABLE II, TABLE 2, Table 1
+    table_match = re.match(r"^(table)\s+([ivxlcdm]+|\d+)\b\.?", text, re.IGNORECASE)
+
     if table_match:
         return {
             "type": "table",
             "number": table_match.group(2),
-            "caption": t
+            "caption": text
         }
 
-    fig_match = re.match(r"^(fig\.|figure)\s*([0-9]+)", t, re.IGNORECASE)
+    # Match Fig. 3, Fig 3, Figure 3
+    fig_match = re.match(r"^(fig\.?|figure)\s+(\d+)\b\.?", text, re.IGNORECASE)
+
     if fig_match:
         return {
             "type": "figure",
             "number": fig_match.group(2),
-            "caption": t
+            "caption": text
         }
+
 
     return None
 
@@ -238,11 +243,23 @@ def build_phase4_links(pdf_path, output_json_path):
 
             # -------- Captions detection --------
             captions = []
-            for ln in lines:
-                cap = detect_caption(ln["text"])
-                if cap:   #Adds bbox coordinates to caption and stores it.
-                    cap["bbox"] = ln["bbox"]
-                    captions.append(cap)
+            for i in range(len(lines)):
+              cap = detect_caption(lines[i]["text"])
+
+              if cap:
+                full_caption = lines[i]["text"].strip()
+
+                # Check next line (caption title line)
+                if i + 1 < len(lines):
+                   next_line = lines[i + 1]["text"].strip()
+
+                    # If next line looks like a caption title
+                   if len(next_line) < 120 and (next_line.isupper() or next_line.istitle()):
+                       full_caption += " " + next_line
+
+                cap["caption"] = full_caption
+                cap["bbox"] = lines[i]["bbox"]
+                captions.append(cap)
 
             # -------- Extract tables --------
             tables = []
