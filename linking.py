@@ -1,7 +1,7 @@
 import pdfplumber
 import pytesseract
 import json
-import re
+import re   #regex matching captions like “Fig. 1”, “Table"
 import os
 import cv2
 import numpy as np
@@ -34,23 +34,32 @@ def preprocess_for_ocr(pil_image):
 
 
 # ---------------- Caption detection ----------------
-def detect_caption_type(text):
-    t = text.strip().lower()
+#Detects whether a line is a caption or not.
+def detect_caption(text):
+    t = text.strip()
 
-    if re.match(r"^(table)\s*[ivx0-9]+", t):
-        return "table"
+    table_match = re.match(r"^(table)\s*([ivx0-9]+)", t, re.IGNORECASE)
+    if table_match:
+        return {
+            "type": "table",
+            "number": table_match.group(2),
+            "caption": t
+        }
 
-    if re.match(r"^(fig\.|figure)\s*[0-9]+", t):
-        return "figure"
+    fig_match = re.match(r"^(fig\.|figure)\s*([0-9]+)", t, re.IGNORECASE)
+    if fig_match:
+        return {
+            "type": "figure",
+            "number": fig_match.group(2),
+            "caption": t
+        }
 
     return None
 
 
+# ---------------- Group words into lines ----------------
+#y_threshold=3 = how close two words must be vertically to be considered in the same line.
 def group_words_into_lines(words, y_threshold=3):
-    """
-    Groups extracted words into lines using their vertical position.
-    Returns lines with bbox coordinates.
-    """
     if not words:
         return []
 
@@ -68,7 +77,7 @@ def group_words_into_lines(words, y_threshold=3):
             current_line = [w]
             current_top = w["top"]
 
-    if current_line:
+    if current_line:   #Because the last line will never be added inside loop automatically.
         lines.append(current_line)
 
     line_objects = []
@@ -90,10 +99,8 @@ def group_words_into_lines(words, y_threshold=3):
     return line_objects
 
 
+# ---------------- Extract paragraphs ----------------
 def extract_paragraphs_from_lines(lines, gap_threshold=12):
-    """
-    Merge lines into paragraphs based on vertical gaps.
-    """
     if not lines:
         return []
 
@@ -131,23 +138,87 @@ def extract_paragraphs_from_lines(lines, gap_threshold=12):
     return paragraphs
 
 
-# ---------------- Linking logic ----------------
-def bbox_vertical_distance(b1, b2):
+# ---------------- Geometry helpers ----------------
+def vertical_gap(bbox1, bbox2):  #bbox= bounding boxes
     """
-    Distance between two bboxes in vertical direction.
-    b = (x0, top, x1, bottom)
+    Returns positive gap if bbox2 is below bbox1.
+    bbox = (x0, top, x1, bottom)
     """
-    return abs(b1[1] - b2[1])
+    return bbox2[1] - bbox1[3]
 
 
-def is_below(caption_bbox, obj_bbox):
-    return obj_bbox[1] >= caption_bbox[3]
+def vertical_overlap(b1, b2):
+    """
+    checks if vertical projection overlaps
+    """
+    return not (b1[3] < b2[1] or b2[3] < b1[1])
 
 
-def is_above(para_bbox, obj_bbox):
-    return para_bbox[3] <= obj_bbox[1]
+def horizontal_overlap(b1, b2):
+    """
+    checks if horizontal projection overlaps
+    """
+    return not (b1[2] < b2[0] or b2[2] < b1[0])
 
 
+def bbox_center_distance(b1, b2):
+    c1y = (b1[1] + b1[3]) / 2
+    c2y = (b2[1] + b2[3]) / 2
+    return abs(c1y - c2y)
+
+
+# ---------------- Universal Caption Linking ----------------
+def link_caption_to_nearest_object(caption, objects):
+    """
+    Links caption to nearest object either above or below.
+    Uses vertical distance + overlap scoring.
+    """
+
+    cap_bbox = caption["bbox"]
+
+    best_obj = None
+    best_score = 999999
+
+    for obj in objects:
+        obj_bbox = obj["bbox"]
+
+        # Prefer objects that overlap horizontally
+        overlap_bonus = 0
+        if horizontal_overlap(cap_bbox, obj_bbox):
+            overlap_bonus = -200  # reduce score strongly
+
+        dist = bbox_center_distance(cap_bbox, obj_bbox)
+
+        score = dist + overlap_bonus
+
+        if score < best_score:
+            best_score = score
+            best_obj = obj
+
+    return best_obj
+
+
+# ---------------- Universal Paragraph Linking ----------------
+def link_paragraph_to_objects(paragraph, objects, max_distance=160):
+    """
+    Links paragraph to nearby objects (above or below).
+    """
+    para_bbox = (0, paragraph["top"], 9999, paragraph["bottom"])
+
+    linked = []
+
+    for obj in objects:
+        obj_bbox = obj["bbox"]
+
+        dist = bbox_center_distance(para_bbox, obj_bbox)
+
+        if dist <= max_distance:
+            linked.append(obj)
+
+    return linked
+
+
+# ---------------- Main Phase 4 ----------------
 def build_phase4_links(pdf_path, output_json_path):
 
     output = {
@@ -160,23 +231,20 @@ def build_phase4_links(pdf_path, output_json_path):
 
         for page_no, page in enumerate(pdf.pages, start=1):
 
-            print(f"➡️ Phase 4 Linking Page {page_no}/{total_pages}")
+            print(f"➡️ Universal Linking Page {page_no}/{total_pages}")
 
-            words = page.extract_words()
+            words = page.extract_words()    #Extracts all words with coordinates
             lines = group_words_into_lines(words)
 
-            # ---- Detect captions ----
+            # -------- Captions detection --------
             captions = []
             for ln in lines:
-                cap_type = detect_caption_type(ln["text"])
-                if cap_type:
-                    captions.append({
-                        "type": cap_type,
-                        "caption": ln["text"],
-                        "bbox": ln["bbox"]
-                    })
+                cap = detect_caption(ln["text"])
+                if cap:   #Adds bbox coordinates to caption and stores it.
+                    cap["bbox"] = ln["bbox"]
+                    captions.append(cap)
 
-            # ---- Extract tables with bbox ----
+            # -------- Extract tables --------
             tables = []
             try:
                 table_objects = page.find_tables()
@@ -190,7 +258,7 @@ def build_phase4_links(pdf_path, output_json_path):
             except:
                 pass
 
-            # ---- Extract images with bbox + OCR ----
+            # -------- Extract images --------
             images = []
             for img_index, img in enumerate(page.images, start=1):
                 bbox = (img["x0"], img["top"], img["x1"], img["bottom"])
@@ -199,7 +267,6 @@ def build_phase4_links(pdf_path, output_json_path):
                     cropped = page.crop(bbox)
                     pil_img = cropped.to_image(resolution=300).original
                     processed = preprocess_for_ocr(pil_img)
-
                     ocr_text = pytesseract.image_to_string(processed).strip()
                 except:
                     ocr_text = ""
@@ -211,66 +278,31 @@ def build_phase4_links(pdf_path, output_json_path):
                     "caption": None
                 })
 
-            # ---- Caption → Object linking (BEST RULE) ----
-            # Caption usually appears ABOVE object
+            # -------- Link captions to tables/images (above or below) --------
             for cap in captions:
                 if cap["type"] == "table":
-                    best_table = None
-                    best_dist = 999999
-
-                    for t in tables:
-                        if is_below(cap["bbox"], t["bbox"]):
-                            dist = t["bbox"][1] - cap["bbox"][3]
-                            if dist < best_dist:
-                                best_dist = dist
-                                best_table = t
-
-                    if best_table:
+                    best_table = link_caption_to_nearest_object(cap, tables)
+                    if best_table:   #Assign the caption to that table.
                         best_table["caption"] = cap["caption"]
 
                 if cap["type"] == "figure":
-                    best_img = None
-                    best_dist = 999999
-
-                    for im in images:
-                        if is_below(cap["bbox"], im["bbox"]):
-                            dist = im["bbox"][1] - cap["bbox"][3]
-                            if dist < best_dist:
-                                best_dist = dist
-                                best_img = im
-
-                    if best_img:
+                    best_img = link_caption_to_nearest_object(cap, images)
+                    if best_img:  #Assign caption to that image.
                         best_img["caption"] = cap["caption"]
 
-            # ---- Paragraph extraction ----
+            # -------- Extract paragraphs --------
             paragraphs = extract_paragraphs_from_lines(lines)
 
-            # ---- Paragraph → linked objects (citation style) ----
-            linked_blocks = []
+            # -------- Link paragraphs to nearest objects (both sides) --------
+            blocks = []
 
             for para in paragraphs:
-                para_bbox = (0, para["top"], page.width, para["bottom"])
+                linked_tables = link_paragraph_to_objects(para, tables, max_distance=200)
+                linked_images = link_paragraph_to_objects(para, images, max_distance=200)
 
-                linked_tables = []
-                linked_images = []
-
-                # Link table if it is immediately below paragraph
-                for t in tables:
-                    if is_above(para_bbox, t["bbox"]):
-                        vertical_gap = t["bbox"][1] - para_bbox[3]
-                        if vertical_gap < 120:  # strong heuristic
-                            linked_tables.append(t)
-
-                # Link image if immediately below paragraph
-                for im in images:
-                    if is_above(para_bbox, im["bbox"]):
-                        vertical_gap = im["bbox"][1] - para_bbox[3]
-                        if vertical_gap < 120:
-                            linked_images.append(im)
-
-                linked_blocks.append({
+                blocks.append({
                     "paragraph_text": para["text"],
-                    "bbox": para_bbox,
+                    "bbox": (0, para["top"], page.width, para["bottom"]),
                     "linked_tables": linked_tables,
                     "linked_images": linked_images
                 })
@@ -280,13 +312,13 @@ def build_phase4_links(pdf_path, output_json_path):
                 "captions_found": captions,
                 "tables_found": tables,
                 "images_found": images,
-                "blocks": linked_blocks
+                "blocks": blocks
             })
 
     with open(output_json_path, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
-    print("\n✅ Phase 4 Perfect Linking Completed.")
+    print("\n✅ Universal Phase 4 Linking Completed.")
     print("📌 Output saved at:", output_json_path)
 
 
@@ -295,7 +327,7 @@ if __name__ == "__main__":
     file_hash = "962ae562ca933789fddeee27ca086458"
 
     pdf_path = f"data/uploads/{file_hash}.pdf"
-    output_path = f"data/cache/{file_hash}_phase4_linked.json"
+    output_path = f"data/cache/{file_hash}_phase4_universal.json"
 
     if not os.path.exists(pdf_path):
         raise FileNotFoundError(f"❌ PDF not found: {pdf_path}")
