@@ -73,9 +73,16 @@ async def upload_pdf(file: UploadFile = File(...)):
     build_chroma_index(chunks_path, chroma_path)
 
     return {
-        "message": "PDF uploaded + processed successfully",
-        "file_hash": file_hash
+    "message": "PDF uploaded successfully",
+    "file_hash": file_hash,
+    "stats": {
+        "total_pages": parsed_data.get("total_pages", 0),
+        "text_blocks": len(parsed_data.get("text_blocks", [])),
+        "tables": len(parsed_data.get("tables", [])),
+        "images": len(parsed_data.get("images_found", [])) if "images_found" in parsed_data else 0,
+        "ocr_blocks": len(parsed_data.get("images_and_flowcharts", [])) if "images_and_flowcharts" in parsed_data else 0
     }
+}
 
 
 # ---------------- Question Model ----------------
@@ -101,8 +108,13 @@ async def ask_question(req: QuestionRequest):
         persist_directory=chroma_path,
         embedding_function=embeddings
     )
+    
+    search_query = f"""
+Find the abstract, introduction, methodology, dataset, models used, results and conclusion.
+User question: {req.question}
+"""
 
-    retrieved_docs = vector_db.similarity_search(req.question, k=7)
+    retrieved_docs = vector_db.similarity_search(search_query, k=15)
 
     context = ""
     pages_used = set()
@@ -124,25 +136,26 @@ async def ask_question(req: QuestionRequest):
     )
 
     prompt = f"""
-You are an expert PDF Question Answering assistant using Retrieval-Augmented Generation (RAG).
+You are an expert PDF assistant.
 
-STRICT RULES:
-1. Use ONLY the provided CONTEXT.
+RULES:
+1. Use ONLY the given CONTEXT.
 2. Do NOT use outside knowledge.
-3. Do NOT guess.
-4. If answer is not clearly present, reply exactly:
-   Not found in the document.
+3. You ARE allowed to summarize and combine information from multiple chunks.
+4. If the context contains partial information, give the best possible answer.
+5. Only say "Not found in the document." if the context is completely irrelevant.
 
 OUTPUT FORMAT:
 Answer:
-<answer>
+<summary in 15-20 lines>
 
-Key Evidence:
-- <evidence line 1>
-- <evidence line 2>
+Key Points:
+- point 1
+- point 2
+- point 3
 
 Context Used:
-<pages/tables/figures>
+Pages: {pages_used}
 
 CONTEXT:
 {context}
