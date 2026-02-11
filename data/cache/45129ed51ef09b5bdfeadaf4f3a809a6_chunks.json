@@ -1,0 +1,519 @@
+[
+  {
+    "chunk_id": "27b1c86da157ef394ee4c98fc533ac6a",
+    "page": 1,
+    "text": "[PAGE: 1]\n[CHUNK TYPE: PARAGRAPH]\n\nPARAGRAPH:\nSentimental Analysis Of Twitter Data",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "5ca6d63fdea7d5176d91bb5cdc531f70",
+    "page": 1,
+    "text": "[PAGE: 1]\n[CHUNK TYPE: PARAGRAPH]\n\nPARAGRAPH:\nMahi Agrawal Mr. Mayank Namdev Department of Computer Science and Engineering Department of Computer Science and Engineering Manipal University Jaipur Manipal University Jaipur Jaipur, India Jaipur, India",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "b42069c109fd905d51509cb5b9c6a0b0",
+    "page": 1,
+    "text": "[PAGE: 1]\n[CHUNK TYPE: PARAGRAPH]\n\nPARAGRAPH:\nTo improve these limitations hybrid approaches combining Abstract—Analyzing sentiment from Twitter data is crucial for grasping public perception in areas like politics, healthcare, featurebasedrepresentationswithlearning-basedmodelshave and finance. Nonetheless the casual and disruptive character been explored.TF-IDF with Support Vector Machine (SVM) of Tweets that contain brevity, informal language, and sarcasm and Word2Vec with LSTM are evaluated to balance compu- complicateaccuratesentimentanalysis.Thisdocumentshowcases tational efficiency and representation learning. Although these a framework for sentiment analysis that assesses conventional hybrid models demonstrate improved performance compared machineeducationalframeworks,advanceddeeplearningmeth- ods, combined strategies, and a specialized transformer model to baseline methods, they are still insufficient for capturing based on Twitter data. Conventional models such as Logistic complex contextual semantics. Regression, Multinomial Naive Bayes and Support Vector Ma- Recent advances in transformer based architectures have chine were utilized, succeeded by a Long Short-Term Memory further improved sentiment analysis through self-attention network deeplearning model. Two hybrids models TF-IDF com- binedwithSVMandWord2VeccombinedwithLSTMenhanced mechanisms. In particular a transformer model BERTweet pre performance attaining accuracies of 88.6 and 89.3 respectively. trained on Twitter data exhibits strong capability in learning To boost performance even more, a BERTweet mod",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "0d03a665a3d13567a87b9382f30d9f0c",
+    "page": 1,
+    "text": "el that was tweet specific linguistic patterns. However despite its high pre trained on extensive Twitter data was refined for three class predictiveaccuracythemodellacksinterpretability.Toaddress sentimentanalysisandreachedaround91accuracy.Interpretable this issue, a unified Twitter sentiment analysis framework is AI employing SHAP was established to offer interpretability at thetokenlevel.Findingsdemonstratetheefficacyoftransformer- proposed that evaluates traditional, hybrid, and transformer- based sentiment examination. based models while integrating Explainable Artificial Intelli- Index Terms—Sentiment Analysis, Twitter Data, BERTweet, gence (XAI) using SHAP to provide transparent, token-level Hybrid Models, Explainable Artificial Intelligence, SHAP, Natu- explanations of model predictions. ral Language Processing, Transformer Models To give a summary of the suggested methodology, Fig. I. INTRODUCTION 1 illustrates the workflow of the Twitter sentiment analysis framework used in this study. The figure summarizes the key Social media sites have emerged as a key channel for stages, including data preprocessing, feature extraction, base- conveyingthoughts,feelings,andresponsestorealityhappen- line and hybrid modeling, BERTweet fine-tuning, sentiment ings. Among these platforms Twitter stands out as a good prediction, and explainability using SHAP, offering a clear source of real time textual information and is extensively view of the overall approach. utilizedforanalysisinvariousfieldsincludingsuchaspolitics, healthcare,economics, finance, and social issues. Despite its I",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "0592bc4c23fb8e8a90c4112d6950f902",
+    "page": 1,
+    "text": "I. LITERATUREREVIEW usefulness sentiment analysis on Twitter continues to be diffi- cult because of the brevity, casual and loud characteristics of The analysis of sentiments expressed on Twitter has grown tweets, which frequently contain slang, emojis, abbreviations, tobeasignificantsubjectinnaturallanguageprocessingdueto and irony creating precision interpretation challenging. thisplatformmirrorspublicsentimentinstantlyandonabroad InitialresearchonTwittersentimentanalysispredominantly scale.Unliketraditionalsentimentanalysisonlongdocuments depended on lexicon based approaches and conventional ma- Twitter data is short, informal, and highly dynamic. Tweets chine learning algorithms. Even though these methods are often include emojis, hashtags, slang, sarcasm, and rapidly computationally efficient these approaches frequently do not changingdiscussiontopics,whichmakessentimentinterpreta- conveycontextualmeaningandsemanticconnectionsinherent tiondifficultandcallsforspecializedmodelingtechniques.The in social media text. Due to the presence of bigger Twitter sentiment analysis has been widely studied due to its impact datasets utilized deep learning models such as Long Short- on public opinion, finance, healthcare, and political discourse. Term Memory networks were introduced to model sequential Early research mainly relied on lexicon-based and traditional patterns.Although models based on LSTM have enhanced machine learning methods. Qi and Shabrina [1] showed that effectivenesscomparedtoconventionalmethodstheyremained such approaches struggle to capture contextual meaning in ",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "b6284571e851975b1b29fc43073e64ca",
+    "page": 1,
+    "text": "limitedinhandlinglongrangecontextandambiguousexpres- short and noisy tweets, while Hassan et al. [2] demonstrated sions commonly found in tweets. that emotion-based sentiment analysis can explain cryptocur- rency market trends but remains limited to specific domains.",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "83058b2d595809d135f5fc2518e94b33",
+    "page": 1,
+    "text": "[PAGE: 1]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\nSentimental Analysis Of Twitter Data Mr. Mayank Namdev Mahi Agrawal Department of Computer Science and Engineering Department of Computer Science and Engineering Manipal University Jaipur Manipal University Jaipur Jaipur, India Jaipur, India Abstract—Analyzing sentiment from Twitter data is crucial To improve these limitations hybrid approaches combining for grasping public perception in areas like politics, healthcare, featurebasedrepresentationswithlearning-basedmodelshave and finance. Nonetheless the casual and disruptive character been explored.TF-IDF with Support Vector Machine (SVM) of Tweets that contain brevity, informal language, and sarcasm and Word2Vec with LSTM are evaluated to balance compu- complicateaccuratesentimentanalysis.Thisdocumentshowcases a framework for sentiment analysis that assesses conventional tational efficiency and representation learning. Although these machineeducationalframeworks,advanceddeeplearningmeth- hybrid models demonstrate improved performance compared ods, combined strategies, and a specialized transformer model to baseline methods, they are still insufficient for capturing based on Twitter data. Conventional models such as Logistic complex contextual semantics. Regression, Multinomial Naive Bayes and Support Vector Ma- Recent advances in transformer based architectures have chine were utilized, succeeded by a Long Short-Term Memory network deeplearning model. Two hybrids models TF-IDF com- further improved sentiment analysis through self-attention binedwithSVMandWord2VeccombinedwithLSTMenhanced mechanisms. In particular a transfor",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "148ba4903fa7906388b1d758b585fa3f",
+    "page": 1,
+    "text": "[PAGE: 1]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\nmer model BERTweet pre performance attaining accuracies of 88.6 and 89.3 respectively. trained on Twitter data exhibits strong capability in learning To boost performance even more, a BERTweet model that was tweet specific linguistic patterns. However despite its high pre trained on extensive Twitter data was refined for three class predictiveaccuracythemodellacksinterpretability.Toaddress sentimentanalysisandreachedaround91accuracy.Interpretable AI employing SHAP was established to offer interpretability at this issue, a unified Twitter sentiment analysis framework is thetokenlevel.Findingsdemonstratetheefficacyoftransformer- proposed that evaluates traditional, hybrid, and transformer- based sentiment examination. based models while integrating Explainable Artificial Intelli- Index Terms—Sentiment Analysis, Twitter Data, BERTweet, gence (XAI) using SHAP to provide transparent, token-level Hybrid Models, Explainable Artificial Intelligence, SHAP, Natu- explanations of model predictions. ral Language Processing, Transformer Models To give a summary of the suggested methodology, Fig. I. INTRODUCTION 1 illustrates the workflow of the Twitter sentiment analysis Social media sites have emerged as a key channel for framework used in this study. The figure summarizes the key conveyingthoughts,feelings,andresponsestorealityhappen- stages, including data preprocessing, feature extraction, base- ings. Among these platforms Twitter stands out as a good line and hybrid modeling, BERTweet fine-tuning, sentiment source of real time textual information and is extensively prediction, and ",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "7d67d99b0395ab8543aa5eb885b8ccb6",
+    "page": 1,
+    "text": "[PAGE: 1]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\nexplainability using SHAP, offering a clear utilizedforanalysisinvariousfieldsincludingsuchaspolitics, view of the overall approach. healthcare,economics, finance, and social issues. Despite its usefulness sentiment analysis on Twitter continues to be diffi- II. LITERATUREREVIEW cult because of the brevity, casual and loud characteristics of The analysis of sentiments expressed on Twitter has grown tweets, which frequently contain slang, emojis, abbreviations, tobeasignificantsubjectinnaturallanguageprocessingdueto and irony creating precision interpretation challenging. thisplatformmirrorspublicsentimentinstantlyandonabroad InitialresearchonTwittersentimentanalysispredominantly scale.Unliketraditionalsentimentanalysisonlongdocuments depended on lexicon based approaches and conventional ma- Twitter data is short, informal, and highly dynamic. Tweets chine learning algorithms. Even though these methods are often include emojis, hashtags, slang, sarcasm, and rapidly computationally efficient these approaches frequently do not changingdiscussiontopics,whichmakessentimentinterpreta- conveycontextualmeaningandsemanticconnectionsinherent tiondifficultandcallsforspecializedmodelingtechniques.The in social media text. Due to the presence of bigger Twitter sentiment analysis has been widely studied due to its impact datasets utilized deep learning models such as Long Short- on public opinion, finance, healthcare, and political discourse. Term Memory networks were introduced to model sequential Early research mainly relied on lexicon-based and traditional patterns.Although models bas",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "59fbd5baf1667ab674348c0239272c39",
+    "page": 1,
+    "text": "[PAGE: 1]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\ned on LSTM have enhanced machine learning methods. Qi and Shabrina [1] showed that effectivenesscomparedtoconventionalmethodstheyremained such approaches struggle to capture contextual meaning in limitedinhandlinglongrangecontextandambiguousexpres- short and noisy tweets, while Hassan et al. [2] demonstrated sions commonly found in tweets. that emotion-based sentiment analysis can explain cryptocur- rency market trends but remains limited to specific domains.",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "77e3138aec77ab81ca287242077b197f",
+    "page": 2,
+    "text": "[PAGE: 2]\n[CHUNK TYPE: PARAGRAPH]\n\nPARAGRAPH:\nTABLEI Twitter Data SUMMARYOFTWITTERSENTIMENTANALYSISSTUDIES Ref. Method Domain/Dataset KeyLimitation [1] Lexicon+ML GeneralTwitter Weak contextual understanding Data Cleaning & Preprocessing [2] EmotionLexicon CryptocurrencyTweets Domain-dependentinsights [3] DLMNN+Hadoop Large-scaleTwitter Highcomputationalcost [4] ML+VADER ElectionTweets Demographicbias [5] ULMFiT+SVM Airline/DebateTweets Poorinterpretability Feature Extraction [7] EnsembleGCR-NN Racism-relatedTweets Task-specificmodel (TF-IDF / Word2Vec) [9] BERT-basedDL Multi-domainTwitter Black-boxbehavior [10] ML+TF-IDF MonkeypoxTweets Manuallabelingreliance [14] RoBERTa-LSTM Sentiment140,IMDb Limitedexplainability [16] RoBERTa-GRU AirlineTweets Increasedmodelcomplexity Baseline & Hybrid Models [17] Lexicon+BERT Crime-relatedTweets Sensitivetolexiconquality (LR, SVM, LSTM, [18] XLM-TTransformer MultilingualTwitter Heavypretrainingrequired TF-IDF + SVM, Word2Vec + LSTM) [15] TransformerEnsemble Cross-lingualTweets Translationerrors [20] Survey/Review Multi-domain Noempiricalvalidation\n\n[CITED TABLE: Table I provides a structured summary of representative]\nRef. | Method | Domain/Dataset | KeyLimitation\n[1] | Lexicon+ML | GeneralTwitter | Weak contextual\nunderstanding\n[2] | EmotionLexicon | CryptocurrencyTweets | Domain-dependentinsights\n[3] | DLMNN+Hadoop | Large-scaleTwitter | Highcomputationalcost\n[4] | ML+VADER | ElectionTweets | Demographicbias\n[5] | ULMFiT+SVM | Airline/DebateTweets | Poorinterpretability\n[7] | EnsembleGCR-NN | Racism-relatedTweets | Task-specificmodel",
+    "citations": [
+      "Table I provides a structured summary of representative",
+      "Image 1"
+    ],
+    "contains_table": true,
+    "contains_figure": true,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "7dc77bb5ebfe1c2d4e213ea72f11f086",
+    "page": 2,
+    "text": "\n[9] | BERT-basedDL | Multi-domainTwitter | Black-boxbehavior\n[10] | ML+TF-IDF | MonkeypoxTweets | Manuallabelingreliance\n[14] | RoBERTa-LSTM | Sentiment140,IMDb | Limitedexplainability\n[16] | RoBERTa-GRU | AirlineTweets | Increasedmodelcomplexity\n[17] | Lexicon+BERT | Crime-relatedTweets | Sensitivetolexiconquality\n[18] | XLM-TTransformer | MultilingualTwitter | Heavypretrainingrequired\n[15] | TransformerEnsemble | Cross-lingualTweets | Translationerrors\n[20] | Survey/Review | Multi-domain | Noempiricalvalidation\n\n[CITED FIGURE: Image 1]\nSentiment Distribution kaggle om ‘Ua Positive Neutral Negative",
+    "citations": [
+      "Table I provides a structured summary of representative",
+      "Image 1"
+    ],
+    "contains_table": true,
+    "contains_figure": true,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "e7d62b55bf86d47b44c9d4bf874ab4da",
+    "page": 2,
+    "text": "[PAGE: 2]\n[CHUNK TYPE: PARAGRAPH]\n\nPARAGRAPH:\nBERTweet Fine-Tuning\n\n[CITED TABLE: Table I provides a structured summary of representative]\nRef. | Method | Domain/Dataset | KeyLimitation\n[1] | Lexicon+ML | GeneralTwitter | Weak contextual\nunderstanding\n[2] | EmotionLexicon | CryptocurrencyTweets | Domain-dependentinsights\n[3] | DLMNN+Hadoop | Large-scaleTwitter | Highcomputationalcost\n[4] | ML+VADER | ElectionTweets | Demographicbias\n[5] | ULMFiT+SVM | Airline/DebateTweets | Poorinterpretability\n[7] | EnsembleGCR-NN | Racism-relatedTweets | Task-specificmodel\n[9] | BERT-basedDL | Multi-domainTwitter | Black-boxbehavior\n[10] | ML+TF-IDF | MonkeypoxTweets | Manuallabelingreliance\n[14] | RoBERTa-LSTM | Sentiment140,IMDb | Limitedexplainability\n[16] | RoBERTa-GRU | AirlineTweets | Increasedmodelcomplexity\n[17] | Lexicon+BERT | Crime-relatedTweets | Sensitivetolexiconquality\n[18] | XLM-TTransformer | MultilingualTwitter | Heavypretrainingrequired\n[15] | TransformerEnsemble | Cross-lingualTweets | Translationerrors\n[20] | Survey/Review | Multi-domain | Noempiricalvalidation\n\n[CITED FIGURE: Image 1]\nSentiment Distribution kaggle om ‘Ua Positive Neutral Negative",
+    "citations": [
+      "Table I provides a structured summary of representative",
+      "Image 1"
+    ],
+    "contains_table": true,
+    "contains_figure": true,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "b4ce574ce7bb72282ae5297c5c6d026c",
+    "page": 2,
+    "text": "[PAGE: 2]\n[CHUNK TYPE: PARAGRAPH]\n\nPARAGRAPH:\nSentiment Prediction (Negative / Neutral / Positive)\n\n[CITED TABLE: Table I provides a structured summary of representative]\nRef. | Method | Domain/Dataset | KeyLimitation\n[1] | Lexicon+ML | GeneralTwitter | Weak contextual\nunderstanding\n[2] | EmotionLexicon | CryptocurrencyTweets | Domain-dependentinsights\n[3] | DLMNN+Hadoop | Large-scaleTwitter | Highcomputationalcost\n[4] | ML+VADER | ElectionTweets | Demographicbias\n[5] | ULMFiT+SVM | Airline/DebateTweets | Poorinterpretability\n[7] | EnsembleGCR-NN | Racism-relatedTweets | Task-specificmodel\n[9] | BERT-basedDL | Multi-domainTwitter | Black-boxbehavior\n[10] | ML+TF-IDF | MonkeypoxTweets | Manuallabelingreliance\n[14] | RoBERTa-LSTM | Sentiment140,IMDb | Limitedexplainability\n[16] | RoBERTa-GRU | AirlineTweets | Increasedmodelcomplexity\n[17] | Lexicon+BERT | Crime-relatedTweets | Sensitivetolexiconquality\n[18] | XLM-TTransformer | MultilingualTwitter | Heavypretrainingrequired\n[15] | TransformerEnsemble | Cross-lingualTweets | Translationerrors\n[20] | Survey/Review | Multi-domain | Noempiricalvalidation\n\n[CITED FIGURE: Image 1]\nSentiment Distribution kaggle om ‘Ua Positive Neutral Negative",
+    "citations": [
+      "Table I provides a structured summary of representative",
+      "Image 1"
+    ],
+    "contains_table": true,
+    "contains_figure": true,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "c487f348fca801180b7f6993921765a7",
+    "page": 2,
+    "text": "[PAGE: 2]\n[CHUNK TYPE: PARAGRAPH]\n\nPARAGRAPH:\nFig.2. SentimentdistributionoftheKaggleTwitterdataset. Explainability (SHAP) for low-resource languages. Fig.1. ProposedTwittersentimentanalysisworkflow. Despite these advances, most existing approaches prioritize accuracywhileofferinglimitedinterpretability.Challengesre- latedtobias,domaingeneralization,andexplainabilityremain WiththerapidgrowthofTwitterdata,deeplearningmodels open, motivating the development of explainable and domain- became increasingly popular. Neelakandan et al. [3] pro- aware transformer-based sentiment analysis frameworks [20]. posed a Deep Learning Modified Neural Network (DLMNN) Table I provides a structured summary of representative supported by large-scale preprocessing to improve sentiment studies on Twitter sentiment analysis, outlining the method- classification accuracy. ologiesadopted,theapplicationdomainsordatasetsexamined, Recent studies have focused on transformer-based and hy- and the principal limitations observed across traditional, deep brid architectures to enhance contextual understanding. Al- learning, and transformer-based approaches. Badanietal.[5]combinedULMFiTwithSVMtooutperform traditional classifiers, while Bello et al. [9] demonstrated III. DATASETANDDATAPROCESSING that BERT-based models significantly outperform Word2Vec- A. Dataset Description based methods. Hybrid models such as RoBERTa-LSTM and RoBERTa-GRU further improved performance by addressing The dataset utilized in this research was obtained from long-range dependencies and class imbalance [14], [16]. Kaggle and compris",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "1a9e6df24ffae3fb076d3fd6c32161aa",
+    "page": 2,
+    "text": "es of Twitter posts labeled for sentiment Domain-specificapplicationshavealsobeenexplored.Ben- analysis. Each tweet is labeled into one of three sentiment gesi et al. [10] analyzed public sentiment during the Monkey- categories: positive, neutral, or negative. Twitter was chosen pox outbreak, and Lee et al. [7] achieved high accuracy in as the data source due to its real time nature. The dataset detecting racist content using ensemble deep learning models. capturesthecharacteristicsofsocialmediatextincludingshort Boukabous and Azizi [17] further showed that combining sentence length, informal language, hashtags, user mentions, lexicon-based labeling with BERT is effective for crime- emojis, abbreviations, and domain-specific expressions. These related sentiment analysis. properties introduce significant variability and noise, making the dataset both challenging and appropriate for evaluating Multilingual sentiment analysis remains an active research traditional, hybrid, and transformer-based sentiment analysis area. Garg and Sharma [11] emphasized robust preprocessing models. for multilingual tweets, while Barbieri et al. [18] introduced XLM-T, a Twitter-specific multilingual transformer. More re- The overall distribution of sentiment classes in the dataset cently, Miah et al. [15] demonstrated that ensemble-based is illustrated in Fig. 2, which shows that positive tweets form cross-lingual sentiment analysis using translation is effective the majority, followed by neutral and negative samples.",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "dff0bdcd1b781c34ad89a659ef7a34e0",
+    "page": 2,
+    "text": "[PAGE: 2]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\nTABLEI Twitter Data SUMMARYOFTWITTERSENTIMENTANALYSISSTUDIES Ref. Method Domain/Dataset KeyLimitation [1] Lexicon+ML GeneralTwitter Weak contextual understanding Data Cleaning & Preprocessing [2] EmotionLexicon CryptocurrencyTweets Domain-dependentinsights [3] DLMNN+Hadoop Large-scaleTwitter Highcomputationalcost [4] ML+VADER ElectionTweets Demographicbias [5] ULMFiT+SVM Airline/DebateTweets Poorinterpretability Feature Extraction [7] EnsembleGCR-NN Racism-relatedTweets Task-specificmodel (TF-IDF / Word2Vec) [9] BERT-basedDL Multi-domainTwitter Black-boxbehavior [10] ML+TF-IDF MonkeypoxTweets Manuallabelingreliance [14] RoBERTa-LSTM Sentiment140,IMDb Limitedexplainability Baseline & Hybrid Models [16] RoBERTa-GRU AirlineTweets Increasedmodelcomplexity (LR, SVM, LSTM, [17] Lexicon+BERT Crime-relatedTweets Sensitivetolexiconquality TF-IDF + SVM, Word2Vec + LSTM) [18] XLM-TTransformer MultilingualTwitter Heavypretrainingrequired [15] TransformerEnsemble Cross-lingualTweets Translationerrors [20] Survey/Review Multi-domain Noempiricalvalidation BERTweet Fine-Tuning Sentiment Prediction (Negative / Neutral / Positive) Fig.2. SentimentdistributionoftheKaggleTwitterdataset. Explainability (SHAP) for low-resource languages. Fig.1. ProposedTwittersentimentanalysisworkflow. Despite these advances, most existing approaches prioritize accuracywhileofferinglimitedinterpretability.Challengesre- latedtobias,domaingeneralization,andexplainabilityremain WiththerapidgrowthofTwitterdata,deeplearningmodels open, motivating the development of explainable and domain- became increasingly popular.",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "363b1796c6dce14d53f3fa7cad8bc606",
+    "page": 2,
+    "text": "[PAGE: 2]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\n Neelakandan et al. [3] pro- aware transformer-based sentiment analysis frameworks [20]. posed a Deep Learning Modified Neural Network (DLMNN) Table I provides a structured summary of representative supported by large-scale preprocessing to improve sentiment studies on Twitter sentiment analysis, outlining the method- classification accuracy. ologiesadopted,theapplicationdomainsordatasetsexamined, Recent studies have focused on transformer-based and hy- and the principal limitations observed across traditional, deep brid architectures to enhance contextual understanding. Al- learning, and transformer-based approaches. Badanietal.[5]combinedULMFiTwithSVMtooutperform traditional classifiers, while Bello et al. [9] demonstrated III. DATASETANDDATAPROCESSING that BERT-based models significantly outperform Word2Vec- A. Dataset Description based methods. Hybrid models such as RoBERTa-LSTM and RoBERTa-GRU further improved performance by addressing The dataset utilized in this research was obtained from long-range dependencies and class imbalance [14], [16]. Kaggle and comprises of Twitter posts labeled for sentiment Domain-specificapplicationshavealsobeenexplored.Ben- analysis. Each tweet is labeled into one of three sentiment gesi et al. [10] analyzed public sentiment during the Monkey- categories: positive, neutral, or negative. Twitter was chosen pox outbreak, and Lee et al. [7] achieved high accuracy in as the data source due to its real time nature. The dataset detecting racist content using ensemble deep learning models. capturesthecharacteristicsofsocialmediatextincludingsh",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "583df2982de50e1f262e4c90a9e54fd0",
+    "page": 2,
+    "text": "[PAGE: 2]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\nort Boukabous and Azizi [17] further showed that combining sentence length, informal language, hashtags, user mentions, lexicon-based labeling with BERT is effective for crime- emojis, abbreviations, and domain-specific expressions. These related sentiment analysis. properties introduce significant variability and noise, making Multilingual sentiment analysis remains an active research the dataset both challenging and appropriate for evaluating area. Garg and Sharma [11] emphasized robust preprocessing traditional, hybrid, and transformer-based sentiment analysis for multilingual tweets, while Barbieri et al. [18] introduced models. XLM-T, a Twitter-specific multilingual transformer. More re- The overall distribution of sentiment classes in the dataset cently, Miah et al. [15] demonstrated that ensemble-based is illustrated in Fig. 2, which shows that positive tweets form cross-lingual sentiment analysis using translation is effective the majority, followed by neutral and negative samples.",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "b89cf3c020e5f62cd94d5980f7120799",
+    "page": 3,
+    "text": "[PAGE: 3]\n[CHUNK TYPE: PARAGRAPH]\n\nPARAGRAPH:\nB. Data Cleaning and Preprocessing Raw Twitter Data BeforethemodeltrainingtheunprocessedTwitterdatawent through multiple preprocessing steps to minimize noise and enhanceoveralldataquality.Thesestepsincludedtheremoval Noise Removal ofURLs,usertags,hashtagsymbols,numericalvalues,special (URLs, Mentions, Hashtags, Numbers, Punctuation) characters, and extra whitespace. All text was converted to lowercase to keep the data consistent. Each tweet was divided into individual tokens using tokenization, and then removal of stopwords to remove significantly frequent but semantically Tokenization & Normalization (Lowercasing, Stopword Removal, Lemmatization, Emoji Mapping) neutralwords. Thesepreprocessingfunctionsare usefulinthe reduction of data sparsity and promote the efficiency of the following feature extraction and model learning. The data preprocessing workflow is illustrated in Fig. 3. It Cleaned & Normalized Tweets breaks down the major stages involved in noise elimination, tokenization, normalization, and emoji handling, resulting in clean, normalized and filtered tweets suitable for feature Fig.3. DatapreprocessingpipelineforTwittersentimentanalysis. extraction and sentiment classification. be frequency repeated in the same tweet but not excessively C. Feature Extraction repeated in all tweets. The TF-IDF value is calculated as There are two feature extraction techniques that were used (cid:18) (cid:19) in the case of the baseline and hybrid models. TF-IDFT is n value(t,d)=frequency(t,d)×log (1) important because it was distrib",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "11b519052a39e61bc155e6ea36dba793",
+    "page": 3,
+    "text": "uted across the frequency dis- n t tribution to understand corpus, while Word2Vec embeddings t d where denotes a term, represents a tweet (document), wereusedformeaningfulassociationsbetweenwordsinacon- frequency(t,d) t d, n is the frequency of term in tweet is the tinuous vector space. TF-IDF features were mostly used with n total number of tweets in the dataset, and is the number t conventional machine learning models whereas Word2Vec t. of tweets containing the term The TF-IDF formulation in embeddings were combined with deep learning models to Eq. (1) follows the standard definition reported in [21] and incorporate contextual information.Transformer-based models tweetsaregoodwithitsincetheyjusthighlightthewordsthat such as BERTweet do not require the explicit feature extrac- are actually important and deemphasize the common words tion, as such they learn the contextual representations directly that appear everywhere. This enhances easier interpretation of out of raw text. what a tweet means. Three classical machine learning classifiers- Linear Regres- D. Preparation of Data for Modeling sion, Multinomial Naive bayes, Support Vector Machine were Uponcleaningthedataandfeatureextraction,thedatahave testedasareferencemodeltosentimentanalysisbasedonTF- been extracted, split that data into training and testing sets to IDF features representations. These are usually used in the seehowwellthemodelperforms.Partitionswerealsoconstant process of classifying text and are reliable as a standard of between data via baseline, hybrid as well as for transformer evaluating more complex m",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "6c9530206465934482d4757d60463191",
+    "page": 3,
+    "text": "ethods. based models to ensure fair and sound comparison. This A probabilistic classifier that was used inLinear Regression consistent data processing pipeline improves the reliability of was to understand the relationship between TF-IDF features the results and makes the experiments easier to reproduce. and sentiment labels.The model assigns weights to individual features that estimates the likelihood of a tweet being con- IV. METHODOLOGY tained in one sentiment category. Its straightforwardness and This describes the sentiment analysis strategy used in this effectiveness establish it as a strong base of high dimensional study. It encompasses classical models of machine learning, text information. hybridapproaches,deeplearningstrategies,transformermodel Support Vector Machine was employed to create an perfect and explainability features and based model. The overall decision boundary among sentiment categories within the workflow is illustrated in Fig. 1. feature space. SVM is good in terms of max performance reducing the distance between classes particularly handling A. Traditional Machine Learning Models with sparse representations like TF-IDF vectors. MultinomialNaiveBayeswasappliedasagenerativemodel The traditional machine learning models were considered that shows distribution of words of classes depending on the to form the baseline classifiers due to their simplicity, com- condition of independent features. Even with its simplicity putational complexity and interpretation. In order to enable this model remains computationally efficient, and has no suchmodelstoprocess",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "541c19e00e8ee8dc32a2546aea009e72",
+    "page": 3,
+    "text": "textualdata,tweetsfirstwerechanged assumptions often generates competitive results in sentiment intonumericalformsusingTermFrequencyInverseDocument analysis tasks. frequency which assigns more weight to words should they",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "59dfccde4c7d29e6dd3f837842d8d277",
+    "page": 3,
+    "text": "[PAGE: 3]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\nB. Data Cleaning and Preprocessing Raw Twitter Data BeforethemodeltrainingtheunprocessedTwitterdatawent through multiple preprocessing steps to minimize noise and enhanceoveralldataquality.Thesestepsincludedtheremoval ofURLs,usertags,hashtagsymbols,numericalvalues,special Noise Removal (URLs, Mentions, Hashtags, Numbers, Punctuation) characters, and extra whitespace. All text was converted to lowercase to keep the data consistent. Each tweet was divided into individual tokens using tokenization, and then removal of stopwords to remove significantly frequent but semantically Tokenization & Normalization neutralwords. Thesepreprocessingfunctionsare usefulinthe (Lowercasing, Stopword Removal, Lemmatization, Emoji Mapping) reduction of data sparsity and promote the efficiency of the following feature extraction and model learning. The data preprocessing workflow is illustrated in Fig. 3. It Cleaned & Normalized Tweets breaks down the major stages involved in noise elimination, tokenization, normalization, and emoji handling, resulting in clean, normalized and filtered tweets suitable for feature Fig.3. DatapreprocessingpipelineforTwittersentimentanalysis. extraction and sentiment classification. C. Feature Extraction be frequency repeated in the same tweet but not excessively repeated in all tweets. The TF-IDF value is calculated as There are two feature extraction techniques that were used (cid:18) (cid:19) in the case of the baseline and hybrid models. TF-IDFT is n value(t,d)=frequency(t,d)×log (1) important because it was distributed across the frequency dis- n t tribution t",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "ae777f522672b58602383a3198bdd15a",
+    "page": 3,
+    "text": "[PAGE: 3]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\no understand corpus, while Word2Vec embeddings where t denotes a term, d represents a tweet (document), wereusedformeaningfulassociationsbetweenwordsinacon- frequency(t,d) is the frequency of term t in tweet d, n is the tinuous vector space. TF-IDF features were mostly used with total number of tweets in the dataset, and n is the number conventional machine learning models whereas Word2Vec t of tweets containing the term t. The TF-IDF formulation in embeddings were combined with deep learning models to Eq. (1) follows the standard definition reported in [21] and incorporate contextual information.Transformer-based models tweetsaregoodwithitsincetheyjusthighlightthewordsthat such as BERTweet do not require the explicit feature extrac- are actually important and deemphasize the common words tion, as such they learn the contextual representations directly that appear everywhere. This enhances easier interpretation of out of raw text. what a tweet means. Three classical machine learning classifiers- Linear Regres- D. Preparation of Data for Modeling sion, Multinomial Naive bayes, Support Vector Machine were Uponcleaningthedataandfeatureextraction,thedatahave testedasareferencemodeltosentimentanalysisbasedonTF- been extracted, split that data into training and testing sets to IDF features representations. These are usually used in the seehowwellthemodelperforms.Partitionswerealsoconstant process of classifying text and are reliable as a standard of between data via baseline, hybrid as well as for transformer evaluating more complex methods. based models to ensure fair and sound ",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "9596f89a87935e1ea6675fca01dd343b",
+    "page": 3,
+    "text": "[PAGE: 3]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\ncomparison. This A probabilistic classifier that was used inLinear Regression consistent data processing pipeline improves the reliability of was to understand the relationship between TF-IDF features the results and makes the experiments easier to reproduce. and sentiment labels.The model assigns weights to individual features that estimates the likelihood of a tweet being con- IV. METHODOLOGY tained in one sentiment category. Its straightforwardness and This describes the sentiment analysis strategy used in this effectiveness establish it as a strong base of high dimensional study. It encompasses classical models of machine learning, text information. hybridapproaches,deeplearningstrategies,transformermodel Support Vector Machine was employed to create an perfect and explainability features and based model. The overall decision boundary among sentiment categories within the workflow is illustrated in Fig. 1. feature space. SVM is good in terms of max performance reducing the distance between classes particularly handling A. Traditional Machine Learning Models with sparse representations like TF-IDF vectors. The traditional machine learning models were considered MultinomialNaiveBayeswasappliedasagenerativemodel to form the baseline classifiers due to their simplicity, com- that shows distribution of words of classes depending on the putational complexity and interpretation. In order to enable condition of independent features. Even with its simplicity suchmodelstoprocesstextualdata,tweetsfirstwerechanged this model remains computationally efficient, and has no intonumeric",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "4fbb6b70b2e3441cc7c9d89da61b8031",
+    "page": 3,
+    "text": "[PAGE: 3]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\nalformsusingTermFrequencyInverseDocument assumptions often generates competitive results in sentiment frequency which assigns more weight to words should they analysis tasks.",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "b98f75a99254c0ff8bfa5162be1b5f7f",
+    "page": 4,
+    "text": "[PAGE: 4]\n[CHUNK TYPE: PARAGRAPH]\n\nPARAGRAPH:\nThese traditional classifiers used together establish baseline TABLEII COMPARISONOFSENTIMENTANALYSISMODELPERFORMANCE performance metrics, and it can be compared to hybrid and deep learning and transformer models discussed later in the Model Accuracy Precision Recall study significantly. LinearRegression 84.2 83.6 82.9 Na¨ıveBayes 82.5 81.9 81.2 SVM 86.1 85.4 84.8 B. Hybrid Models TF-IDF+SVM 88.6 87.9 87.2 Word2Vec+LSTM 89.3 88.7 88.1 To increase the representational ability and retain Two hy- LSTM 87.4 86.8 86.1 brid models have been investigated, which are computational BERTweet 91.57 90.4 90.1 efficienct. 1) Hybrid Model 1: TF-IDF + SVM: In the first hybrid approach, combination of TF-IDF features and an SVM was the model understand important relationships between words used to improve discrimination between sentiment classes. across the tweet. This model has the advantage of making use of statistically The final sentiment prediction is obtained using a soft- weighted features and margin based classification, which is max classifier Equation (3) , which converts the model out- more effective than traditional models on their own. put scores into normalized class probabilities for multi-class 2) Hybrid Model 2: Word2Vec + LSTM: The second hy- sentiment classification [23]. The softmax-based probability brid approach merges Word2Vec embeddings with a LSTM estimation is given by network to understand both semantic temporal and causal exp(s ) relationships on tweets. Word2Vec encodes words as dense c P(y =c|x)= (3) (cid:80)C vector",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "969246b919a03ba3fa49144dcf1bb5fa",
+    "page": 4,
+    "text": "s that maintain semantic associations, which are pro- exp(s ) j j=1 cessed in sequence by the LSTM. The LSTM recognizes C where denotes the total number of sentiment classes and contextual and sentiment trends within the tweet Through the s c. is the predicted score for the class use of an internal memory that are frequently overlooked c by feature based methods. This hybrid approach provides E. Explainable Artificial Intelligence Using SHAP finer representation of sentiment as compared to conventional Toenhancemodeltransparency,ExplainableArtificialIntel- classifiers and at the same time computationally more more ligence(XAI)wasincorporatedusingSHAP,whichinterprets efficient than transformer based models. predictions through additive feature attributions derived from C. Deep Learning Model cooperative game theory [24]. The SHAP explanation model is defined as A separate LSTM-based deep learning system was also implemented directly to model the sequence of tweets rep- n (cid:88) resentations. LSTM networks are capable of learning time- g(x)=ϕ + ϕ (4) 0 i dependence and their ability to handle long-range context i=1 information in tweets remains limited, motivating the use of whereg(x)denotesthemodeloutput,ϕ representsthebase 0 model on the basis of transformers. ith ϕ value, and indicates the contribution of the token. This i formulation enables token-level interpretation of sentiment D. Transformer-Based Model: BERTweet predictions and mitigates the black-box nature of transformer- Inordertogainmorecontextualinsight,BERTweet,amodel based models [24]. trained on large-scale",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "75545cb41be88a2de5c00925989884f6",
+    "page": 4,
+    "text": " Twitter based on transformers data was Fig. 4 illustrates the BERTweet-based sentiment analysis refined in sentiment classification. BERTweet is based on the workflow,highlightingthemajorstagesfrompreprocessingto transformer architecture founded on representational models explainable sentiment prediction. to express contextual relationships: self-attention mechanisms Themodelisbuiltonthetransformerarchitectureandemploys V. RESULTS,EVALUATION,ANDERRORANALYSIS self-attentionmechanismstolearncontextualdependenciesbe- This part covers discusses the experimental results ob- tween words in a sequence, enabling more accurate sentiment tained from conventional machine learning models, hybrid prediction [22], [25]. The self-attention operation employed approaches, neural network models, along with a transformer- by the transformer is defined as oriented sentiment analyzer. Model performance is assessed through standard classification metrics to allow for an equi- XYT(cid:19) (cid:18) √ Z Attention(X,Y,Z)=softmax (2) table and uniform comparison throughout all methods. D k A. Evaluation Metrics X, Y, Z where and denote the query, key, and value D matrices, respectively, and represents the dimensional of Theperformanceofthesentimentclassificationmodelswas k thekeyvectors.Equation (2)followsthestandardtransformer measured using three standard metrics: Accuracy, Precision, self-attention formulation [22] and adopted by BERTweet for and Recall, which are frequently employed in supervised contextualrepresentationlearning[25].Thismechanismhelps classification assignments [23]. Precision a",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "eb4a9903c4ed27d90eab627988c80d53",
+    "page": 4,
+    "text": "ssesses the overall",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "0cfe772db12b2d8ff772652a988dfeb7",
+    "page": 4,
+    "text": "[PAGE: 4]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\nThese traditional classifiers used together establish baseline TABLEII performance metrics, and it can be compared to hybrid and COMPARISONOFSENTIMENTANALYSISMODELPERFORMANCE deep learning and transformer models discussed later in the Model Accuracy Precision Recall study significantly. LinearRegression 84.2 83.6 82.9 Na¨ıveBayes 82.5 81.9 81.2 B. Hybrid Models SVM 86.1 85.4 84.8 TF-IDF+SVM 88.6 87.9 87.2 To increase the representational ability and retain Two hy- Word2Vec+LSTM 89.3 88.7 88.1 LSTM 87.4 86.8 86.1 brid models have been investigated, which are computational BERTweet 91.57 90.4 90.1 efficienct. 1) Hybrid Model 1: TF-IDF + SVM: In the first hybrid approach, combination of TF-IDF features and an SVM was the model understand important relationships between words used to improve discrimination between sentiment classes. across the tweet. This model has the advantage of making use of statistically The final sentiment prediction is obtained using a soft- weighted features and margin based classification, which is max classifier Equation (3) , which converts the model out- more effective than traditional models on their own. put scores into normalized class probabilities for multi-class 2) Hybrid Model 2: Word2Vec + LSTM: The second hy- sentiment classification [23]. The softmax-based probability brid approach merges Word2Vec embeddings with a LSTM estimation is given by network to understand both semantic temporal and causal relationships on tweets. Word2Vec encodes words as dense P(y =c|x)= exp(s c ) (3) vectors that maintain semantic associations, which are pro- (c",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "b9704f8b25341db8579d5ee267cca3c0",
+    "page": 4,
+    "text": "[PAGE: 4]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\nid:80)C exp(s ) j=1 j cessed in sequence by the LSTM. The LSTM recognizes where C denotes the total number of sentiment classes and contextual and sentiment trends within the tweet Through the s is the predicted score for the class c. use of an internal memory that are frequently overlooked c by feature based methods. This hybrid approach provides E. Explainable Artificial Intelligence Using SHAP finer representation of sentiment as compared to conventional classifiers and at the same time computationally more more Toenhancemodeltransparency,ExplainableArtificialIntel- efficient than transformer based models. ligence(XAI)wasincorporatedusingSHAP,whichinterprets predictions through additive feature attributions derived from C. Deep Learning Model cooperative game theory [24]. The SHAP explanation model is defined as A separate LSTM-based deep learning system was also implemented directly to model the sequence of tweets rep- n (cid:88) resentations. LSTM networks are capable of learning time- g(x)=ϕ + ϕ (4) 0 i dependence and their ability to handle long-range context i=1 information in tweets remains limited, motivating the use of whereg(x)denotesthemodeloutput,ϕ representsthebase model on the basis of transformers. 0 value, and ϕ indicates the contribution of the ith token. This i formulation enables token-level interpretation of sentiment D. Transformer-Based Model: BERTweet predictions and mitigates the black-box nature of transformer- Inordertogainmorecontextualinsight,BERTweet,amodel based models [24]. trained on large-scale Twitter based on transformers data was Fig. 4",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "f265950ca9923c4ad1b3465ad78817d9",
+    "page": 4,
+    "text": "[PAGE: 4]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\n illustrates the BERTweet-based sentiment analysis refined in sentiment classification. BERTweet is based on the workflow,highlightingthemajorstagesfrompreprocessingto transformer architecture founded on representational models explainable sentiment prediction. to express contextual relationships: self-attention mechanisms Themodelisbuiltonthetransformerarchitectureandemploys V. RESULTS,EVALUATION,ANDERRORANALYSIS self-attentionmechanismstolearncontextualdependenciesbe- This part covers discusses the experimental results ob- tween words in a sequence, enabling more accurate sentiment tained from conventional machine learning models, hybrid prediction [22], [25]. The self-attention operation employed approaches, neural network models, along with a transformer- by the transformer is defined as oriented sentiment analyzer. Model performance is assessed (cid:18) XYT(cid:19) through standard classification metrics to allow for an equi- Attention(X,Y,Z)=softmax √ Z (2) table and uniform comparison throughout all methods. D k A. Evaluation Metrics where X, Y, and Z denote the query, key, and value matrices, respectively, and D represents the dimensional of Theperformanceofthesentimentclassificationmodelswas k thekeyvectors.Equation (2)followsthestandardtransformer measured using three standard metrics: Accuracy, Precision, self-attention formulation [22] and adopted by BERTweet for and Recall, which are frequently employed in supervised contextualrepresentationlearning[25].Thismechanismhelps classification assignments [23]. Precision assesses the overall",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "531c40ca5d11e6a33e333fdc87c7ed1a",
+    "page": 5,
+    "text": "[PAGE: 5]\n[CHUNK TYPE: PARAGRAPH]\n\nPARAGRAPH:\nTwitter Dataset Collection\n\n[CITED FIGURE: Fig. 5. Confusion matrix of the BERTweet model for three-class sentiment]\n22000 ° 344 532 10000 8000 ac 345 110238) 447 6000 '~ 4000 n- 704 567 ED | = 2000",
+    "citations": [
+      "Fig. 5. Confusion matrix of the BERTweet model for three-class sentiment"
+    ],
+    "contains_table": false,
+    "contains_figure": true,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "27b196bdadf0ae539b549a5eff068ed6",
+    "page": 5,
+    "text": "[PAGE: 5]\n[CHUNK TYPE: PARAGRAPH]\n\nPARAGRAPH:\nData Preprocessing and Cleaning\n\n[CITED FIGURE: Fig. 5. Confusion matrix of the BERTweet model for three-class sentiment]\n22000 ° 344 532 10000 8000 ac 345 110238) 447 6000 '~ 4000 n- 704 567 ED | = 2000",
+    "citations": [
+      "Fig. 5. Confusion matrix of the BERTweet model for three-class sentiment"
+    ],
+    "contains_table": false,
+    "contains_figure": true,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "890b54824b28b6a7a6101ad5deba6477",
+    "page": 5,
+    "text": "[PAGE: 5]\n[CHUNK TYPE: PARAGRAPH]\n\nPARAGRAPH:\nLabel Normalization\n\n[CITED FIGURE: Fig. 5. Confusion matrix of the BERTweet model for three-class sentiment]\n22000 ° 344 532 10000 8000 ac 345 110238) 447 6000 '~ 4000 n- 704 567 ED | = 2000",
+    "citations": [
+      "Fig. 5. Confusion matrix of the BERTweet model for three-class sentiment"
+    ],
+    "contains_table": false,
+    "contains_figure": true,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "acda6ce61454bf3c2fdcc83c956b5273",
+    "page": 5,
+    "text": "[PAGE: 5]\n[CHUNK TYPE: PARAGRAPH]\n\nPARAGRAPH:\nTrain–Validation Split\n\n[CITED FIGURE: Fig. 5. Confusion matrix of the BERTweet model for three-class sentiment]\n22000 ° 344 532 10000 8000 ac 345 110238) 447 6000 '~ 4000 n- 704 567 ED | = 2000",
+    "citations": [
+      "Fig. 5. Confusion matrix of the BERTweet model for three-class sentiment"
+    ],
+    "contains_table": false,
+    "contains_figure": true,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "7798fb731d5954ed9c30014a817e6e43",
+    "page": 5,
+    "text": "[PAGE: 5]\n[CHUNK TYPE: PARAGRAPH]\n\nPARAGRAPH:\nBERTweet Tokenization Fig. 5. Confusion matrix of the BERTweet model for three-class sentiment classification. Class Imbalance Handling models further enhance performance by combining feature- based representations with learning-based techniques. Among BERTweet Model Fine-Tuning all assessed methods, the transformer-driven BERTweet. The model reaches the top scores in every metric, showcasing its capabilitytoaccuratelygraspcontextualandsemanticnuances data in Twitter information. Hyperparameter Optimization\n\n[CITED FIGURE: Fig. 5. Confusion matrix of the BERTweet model for three-class sentiment]\n22000 ° 344 532 10000 8000 ac 345 110238) 447 6000 '~ 4000 n- 704 567 ED | = 2000",
+    "citations": [
+      "Fig. 5. Confusion matrix of the BERTweet model for three-class sentiment"
+    ],
+    "contains_table": false,
+    "contains_figure": true,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "b010764ab399653b25d2dfa2768dc7b2",
+    "page": 5,
+    "text": "[PAGE: 5]\n[CHUNK TYPE: PARAGRAPH]\n\nPARAGRAPH:\nC. Error Analysis Model Evaluation Although the overall performance is strong, several sources of classification errors were identified. Traditional and hy- brid models often misclassified tweets containing sarcasm, Explainable AI using SHAP idiomatic expressions, or sentiment that depends heavily on context. Neutral tweets were particularly difficult to clas- sify due to lexical overlap with both positive and negative classes. While the BERTweet model significantly reduced Sentiment Prediction and Interpretation such errors, misclassifications still occurred in tweets with implicit sentiment or ambiguous phrasing. The use of SHAP- Fig.4. BERTweet-basedsentimentanalysisworkflowwithexplainability. based explainability allowed marking the influential tokens accountable for misleading forecasts, offer excellent guidance accuracy of forecasts, Precision measures the ratio of ac- to the model conduct and point out possible trend for future curately forecasted positive cases, while Recall assesses the improvement. Fig. 5 illustrates the confusion matrix of the capability of the model to recognize all pertinent positive BERTweet model, where rows represent the real sentiment instances.These metrics are defined as follows: labels and columns suggests predicted labels, with 0, 1, and 2 representing negative, neutral, and positive classes, respec- Correct Predictions tively. Accuracy= (5) Total Predictions DISCUSSION True Positives Precision= (6) The results of the conducted experiment indicate a clear Positives+False True Positives diffe",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "d3074d0a33dd2c05c1764034017f5e80",
+    "page": 5,
+    "text": "rence in performance comparisons between traditional, hybrid and transformer-based methodologies of sentiment True Positives Recall= (7) analysis with an emphasis on the complexities. Twitter text Positives+False True Negatives and the merits and demerits of both modeling technique. The B. Model Performance Comparison traditional machine learning models like Linear Regression, TTableIIoutlinestheperformanceofeveryassessedmodels Naive Bayes, and SVM are useful but depend on manually regardingaccuracy,precision,andrecall.Amongamongthese, and are limited by their reliance on manually constructed the BERTweet model achieves the highest accuracy of 91.57 features, which restrict their ability to capture contextual and The results show that traditional machine learning models implicit sentiment that is generally found in tweets. Hybrid models show continuous improvements per- representations provide a strong baseline for sentiment classification. Hybrid",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "9ae47a68da663aab8af1749400e810a7",
+    "page": 5,
+    "text": "[PAGE: 5]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\nTwitter Dataset Collection Data Preprocessing and Cleaning Label Normalization Train–Validation Split BERTweet Tokenization Fig. 5. Confusion matrix of the BERTweet model for three-class sentiment classification. Class Imbalance Handling models further enhance performance by combining feature- based representations with learning-based techniques. Among BERTweet Model Fine-Tuning all assessed methods, the transformer-driven BERTweet. The model reaches the top scores in every metric, showcasing its capabilitytoaccuratelygraspcontextualandsemanticnuances Hyperparameter Optimization data in Twitter information. C. Error Analysis Model Evaluation Although the overall performance is strong, several sources of classification errors were identified. Traditional and hy- brid models often misclassified tweets containing sarcasm, Explainable AI using SHAP idiomatic expressions, or sentiment that depends heavily on context. Neutral tweets were particularly difficult to clas- sify due to lexical overlap with both positive and negative Sentiment Prediction and Interpretation classes. While the BERTweet model significantly reduced such errors, misclassifications still occurred in tweets with implicit sentiment or ambiguous phrasing. The use of SHAP- Fig.4. BERTweet-basedsentimentanalysisworkflowwithexplainability. based explainability allowed marking the influential tokens accountable for misleading forecasts, offer excellent guidance accuracy of forecasts, Precision measures the ratio of ac- to the model conduct and point out possible trend for future curately forecasted positive cases, ",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "0faab7c4ad21432fb1fd61091862206f",
+    "page": 5,
+    "text": "[PAGE: 5]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\nwhile Recall assesses the improvement. Fig. 5 illustrates the confusion matrix of the capability of the model to recognize all pertinent positive BERTweet model, where rows represent the real sentiment instances.These metrics are defined as follows: labels and columns suggests predicted labels, with 0, 1, and 2 representing negative, neutral, and positive classes, respec- Correct Predictions Accuracy= (5) tively. Total Predictions DISCUSSION True Positives Precision= (6) True Positives+False Positives The results of the conducted experiment indicate a clear difference in performance comparisons between traditional, True Positives hybrid and transformer-based methodologies of sentiment Recall= (7) True Positives+False Negatives analysis with an emphasis on the complexities. Twitter text and the merits and demerits of both modeling technique. The B. Model Performance Comparison traditional machine learning models like Linear Regression, TTableIIoutlinestheperformanceofeveryassessedmodels Naive Bayes, and SVM are useful but depend on manually regardingaccuracy,precision,andrecall.Amongamongthese, and are limited by their reliance on manually constructed the BERTweet model achieves the highest accuracy of 91.57 features, which restrict their ability to capture contextual and The results show that traditional machine learning models implicit sentiment that is generally found in tweets. Hybrid provide a strong baseline for sentiment classification. Hybrid models show continuous improvements per- representations",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "7fcec498d7b9184665c855d7a5a73768",
+    "page": 6,
+    "text": "[PAGE: 6]\n[CHUNK TYPE: PARAGRAPH]\n\nPARAGRAPH:\nwith feature-based representations using combinations, per- REFERENCES formance can be combined learning-driven methods. TF-IDF [1] Y.QiandZ.Shabrina,“SentimentanalysisusingTwitterdata:Acom- + SVM and Word2Vec + LSTM obtain more balanced and parativeapplicationoflexicon-andmachine-learning-basedapproach,” more accurate comparative measurements of precision-recall SocialNetworkAnalysisandMining,vol.13,no.1,pp.1–15,Feb.2023. [2] M. K. Hassan, F. A. Hudaefi, and R. E. Caraka, “Mining netizen’s to other traditional methods, pointing out the benefits of opiniononcryptocurrency:SentimentanalysisofTwitterdata,”Studies incorporating semantic data. However, these gains are small inEconomicsandFinance,vol.39,no.3,pp.365–384,2022. and this implies that hybrid models are still struggling with [3] S. Neelakandan, D. Paulraj, P. Ezhumalai, and M. Prakash, “A deep learningmodifiedneuralnetwork(DLMNN)basedproficientsentiment long-range context. Journal of Experimental & Theo- analysis technique on Twitter data,” Transformer-basedmodelBertweetperformedbestinterms reticalArtificialIntelligence,vol.36,no.3,pp.1–18,2024. of overall performance on all evaluation metrics since the Anto´nio, [4] P. Rita, N. and A. P. Afonso, “Social media discourse and voting decisions influence: Sentiment analysis in tweets during an model is pre-trained on huge amounts of Twitter data. Never- Social Network Analysis and Mining, electoral period,” vol. 13, no. 1, theless,despitethehighlevelofaccuracy,themodelcontinues pp.1–19,Mar.2023. tofailinitsattempttoidentifythe",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "67573dfa2b9a0d4feb1cd5a515018aac",
+    "page": 6,
+    "text": "neutralsentimentcorrectly, [5] B.AlBadani,R.Shi,andJ.Dong,“Anovelmachinelearningapproach for sentiment analysis on Twitter incorporating the universal language which is reflective of the inherent ambiguity of the social modelfine-tuningandSVM,”AppliedSystemInnovation,vol.5,no.1, media language. The use of SHAP-based explainability as an pp.1–15,Jan.2022. additional means of strengthening the method also makes the et al., [6] M. S. Amin “Harmonizing macro-financial factors and Twitter Journal of sentiment analysis in forecasting stock market trends,” sentiment analysis system more transparent and reliable as it ComputerScienceandTechnologyStudies,Jan.2024. shows the words that impact predictions. [7] E.Lee,F.Rustam,P.B.Washington,F.ElBarakaz,W.Aljedaani,and I.Ashraf,“Racismdetectionbyanalyzingdifferentialopinionsthrough sentimentanalysisoftweetsusingstackedensembleGCR-NNmodel,” CONCLUSIONANDFUTUREWORK IEEEAccess,vol.10,pp.10234–10247,2022. [8] B.Andrian,T.Simanungkalit,I.Budi,andA.F.Wicaksono,“Sentiment This study examined the Twitter sentiment analysis using analysis on customer satisfaction of digital banking in Indonesia,” a systematic comparison of the classical machine learning Faculty of Computer Science, University of Indonesia, vol. 13, no. 3, 2022. models, combinations and a transformer architecture. As can [9] A.Bello,S.-C.Ng,andM.-F.Leung,“ABERTframeworkforsentiment beseen,theresultsrevealagradualperformanceimprovement analysisoftweets,”Sensors,vol.23,no.1,pp.1–18,Jan.2023. themodelsshifttolesscomplexlexicalrepresentationscontext [10] S.Bengesi,T.Oladunni,R.Oluseg",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "79a341669befee364d632fa7f33fd8cd",
+    "page": 6,
+    "text": "un,andH.Audu,“Amachinelearning sentiment analysis on Monkeypox outbreak: An extensive dataset to aware methods of learning. showthepolarityofpublicopinionfromTwittertweets,”IEEEAccess, Classifiers such as Linear regression, Naive Bayes and vol.11,pp.1–15,Feb.2023. SVM are reliable as a baseline. They are however reliant on [11] N. Garg and K. Sharma, “Text pre-processing of multilingual for sentimentanalysisbasedonsocialnetworkdata,”InternationalJournal handcrafted features not only limit their ability to address ofElectricalandComputerEngineering,vol.12,no.1,pp.1–10,Feb. the informal, situational nature of Twitter text. The hybrid 2022. models offer a sensible trade-off between representation and [12] A.R.andA.A.,“Arabictweets-basedsentimentanalysistoinvestigate theimpactofCOVID-19inKSA:Adeeplearningapproach,”BigData efficiency learning. The TF-IDF + SVM and Word2Vec + andCognitiveComputing,vol.7,no.1,pp.1–16,Jan.2023. LSTM models provide more consistent and has better per- [13] M.A.PalominoandF.Aider,“Evaluatingtheeffectivenessoftextpre- formance than conventional algorithms especially in high- processinginsentimentanalysis,”AppliedSciences,vol.12,no.17,pp. 1–19,Aug.2022. noise data environments. These gains not withstanding, the [14] K.L.Tan,C.P.Lee,K.S.M.Anbananthen,andK.M.Lim,“RoBERTa- improvements are moderate that show that hybrid models are LSTM: A hybrid model for sentiment analysis with transformer and yet to be fully realized challenge in the representation of long IEEE Access, recurrent neural network,” vol. 10, pp. 20456–20469, 2022. range dependencies and subt",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "03424e69b502a8278306c55265881eb7",
+    "page": 6,
+    "text": "lety. sentiment changes that are M.S.U.Miahetal.,“Amultimodalapproachtocross-lingualsentiment [15] common in twitters. analysiswithensembleoftransformerandLLM,”ScientificReports,vol. The BERTweet model based on a transformer. architecture, 14,pp.1–16,Apr.2024. [16] K.L.Tan,C.P.Lee,andK.M.Lim,“RoBERTa-GRU:Ahybriddeep overallattainsthehighestperformance,withamaximumaccu- learningmodelforenhancedsentimentanalysis,”AppliedSciences,vol. racyof91.0.Thisisbecauseofitseffectiveness.topretraining 13,no.6,pp.1–18,Mar.2023. on Twitter data and its capability to pretrain on large scale [17] M. Boukabous and M. Azizi, “Crime prediction using a hybrid senti- ment analysis approach based on bidirectional encoder representations data.contextualrelationshipsbasedonselfattention.However Indonesian Journal of Electrical Engineering and from transformers,” There are difficulties in using complex models transformers ComputerScience,vol.25,no.2,pp.1–12,Feb.2022. would bringinterpretability. This shortcoming isovercome by [18] F. Barbieri, L. Espinosa-Anke, and J. Camacho-Collados, “XLM-T: Multilingual language models in Twitter for sentiment analysis and useofSHAPbasedexplainabilitythatgivesoutexplicittoken Proc. Language Resources and Evaluation Conf. (LREC), beyond,” in level understandings of behavior on predictions. 2022,pp.258–266. On the whole the proposed framework creates an equi- et al., [19] A. P. Rodrigues “Real-time Twitter spam detection and sen- timent analysis using machine learning and deep learning techniques librium between Making it well predictive performance and (retracted),",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "c87e1e7fb25db57ec67588825c430f2e",
+    "page": 6,
+    "text": "”ComputationalIntelligenceandNeuroscience,2022. interpretability appropriate to real world sentiment analysis. [20] H.T.andM.M.,“Artificialintelligenceandsentimentanalysis:Areview Futureworkareabletoinvestigatemoresuccessfulapproaches incompetitiveresearch,”Computers,vol.12,no.2,pp.1–20,Feb.2023. [21] A.Kumar,S.Verma,andR.Singh,“TF-IDFbasedtextrepresentation to neutral sentiment management class imbalance as well as forsentimentclassification,”IEEEAccess,2022. extrapolating the framework to multilingual and cross-domain et al., Advances in Neural [22] A. Vaswani “Attention is all you need,” in social media data. InformationProcessingSystems(NeurIPS),2017,pp.5998–6008.",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "4376cc09b07fce880d284740fc98f2a0",
+    "page": 6,
+    "text": "[PAGE: 6]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\nwith feature-based representations using combinations, per- REFERENCES formance can be combined learning-driven methods. TF-IDF [1] Y.QiandZ.Shabrina,“SentimentanalysisusingTwitterdata:Acom- + SVM and Word2Vec + LSTM obtain more balanced and parativeapplicationoflexicon-andmachine-learning-basedapproach,” more accurate comparative measurements of precision-recall SocialNetworkAnalysisandMining,vol.13,no.1,pp.1–15,Feb.2023. to other traditional methods, pointing out the benefits of [2] M. K. Hassan, F. A. Hudaefi, and R. E. Caraka, “Mining netizen’s opiniononcryptocurrency:SentimentanalysisofTwitterdata,”Studies incorporating semantic data. However, these gains are small inEconomicsandFinance,vol.39,no.3,pp.365–384,2022. and this implies that hybrid models are still struggling with [3] S. Neelakandan, D. Paulraj, P. Ezhumalai, and M. Prakash, “A deep long-range context. learningmodifiedneuralnetwork(DLMNN)basedproficientsentiment analysis technique on Twitter data,” Journal of Experimental & Theo- Transformer-basedmodelBertweetperformedbestinterms reticalArtificialIntelligence,vol.36,no.3,pp.1–18,2024. of overall performance on all evaluation metrics since the [4] P. Rita, N. Anto´nio, and A. P. Afonso, “Social media discourse and model is pre-trained on huge amounts of Twitter data. Never- voting decisions influence: Sentiment analysis in tweets during an electoral period,” Social Network Analysis and Mining, vol. 13, no. 1, theless,despitethehighlevelofaccuracy,themodelcontinues pp.1–19,Mar.2023. tofailinitsattempttoidentifytheneutralsentimentcorrectly, [5] B.AlBadani,R.Sh",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "dce355aa881846506a1a3e5987e3dee9",
+    "page": 6,
+    "text": "[PAGE: 6]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\ni,andJ.Dong,“Anovelmachinelearningapproach which is reflective of the inherent ambiguity of the social for sentiment analysis on Twitter incorporating the universal language modelfine-tuningandSVM,”AppliedSystemInnovation,vol.5,no.1, media language. The use of SHAP-based explainability as an pp.1–15,Jan.2022. additional means of strengthening the method also makes the [6] M. S. Amin et al., “Harmonizing macro-financial factors and Twitter sentiment analysis system more transparent and reliable as it sentiment analysis in forecasting stock market trends,” Journal of ComputerScienceandTechnologyStudies,Jan.2024. shows the words that impact predictions. [7] E.Lee,F.Rustam,P.B.Washington,F.ElBarakaz,W.Aljedaani,and I.Ashraf,“Racismdetectionbyanalyzingdifferentialopinionsthrough sentimentanalysisoftweetsusingstackedensembleGCR-NNmodel,” CONCLUSIONANDFUTUREWORK IEEEAccess,vol.10,pp.10234–10247,2022. [8] B.Andrian,T.Simanungkalit,I.Budi,andA.F.Wicaksono,“Sentiment This study examined the Twitter sentiment analysis using analysis on customer satisfaction of digital banking in Indonesia,” a systematic comparison of the classical machine learning Faculty of Computer Science, University of Indonesia, vol. 13, no. 3, models, combinations and a transformer architecture. As can 2022. [9] A.Bello,S.-C.Ng,andM.-F.Leung,“ABERTframeworkforsentiment beseen,theresultsrevealagradualperformanceimprovement analysisoftweets,”Sensors,vol.23,no.1,pp.1–18,Jan.2023. themodelsshifttolesscomplexlexicalrepresentationscontext [10] S.Bengesi,T.Oladunni,R.Olusegun,andH.Audu,“Amachinelearning aware methods o",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "b4da7981369f2b09930cc94d18d42750",
+    "page": 6,
+    "text": "[PAGE: 6]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\nf learning. sentiment analysis on Monkeypox outbreak: An extensive dataset to showthepolarityofpublicopinionfromTwittertweets,”IEEEAccess, Classifiers such as Linear regression, Naive Bayes and vol.11,pp.1–15,Feb.2023. SVM are reliable as a baseline. They are however reliant on [11] N. Garg and K. Sharma, “Text pre-processing of multilingual for handcrafted features not only limit their ability to address sentimentanalysisbasedonsocialnetworkdata,”InternationalJournal ofElectricalandComputerEngineering,vol.12,no.1,pp.1–10,Feb. the informal, situational nature of Twitter text. The hybrid 2022. models offer a sensible trade-off between representation and [12] A.R.andA.A.,“Arabictweets-basedsentimentanalysistoinvestigate efficiency learning. The TF-IDF + SVM and Word2Vec + theimpactofCOVID-19inKSA:Adeeplearningapproach,”BigData andCognitiveComputing,vol.7,no.1,pp.1–16,Jan.2023. LSTM models provide more consistent and has better per- [13] M.A.PalominoandF.Aider,“Evaluatingtheeffectivenessoftextpre- formance than conventional algorithms especially in high- processinginsentimentanalysis,”AppliedSciences,vol.12,no.17,pp. noise data environments. These gains not withstanding, the 1–19,Aug.2022. [14] K.L.Tan,C.P.Lee,K.S.M.Anbananthen,andK.M.Lim,“RoBERTa- improvements are moderate that show that hybrid models are LSTM: A hybrid model for sentiment analysis with transformer and yet to be fully realized challenge in the representation of long recurrent neural network,” IEEE Access, vol. 10, pp. 20456–20469, range dependencies and subtlety. sentiment changes that are 2022. [15] M.S.U.Mi",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "fb7e086e3aafef641783bf06e30dbf4c",
+    "page": 6,
+    "text": "[PAGE: 6]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\nahetal.,“Amultimodalapproachtocross-lingualsentiment common in twitters. analysiswithensembleoftransformerandLLM,”ScientificReports,vol. The BERTweet model based on a transformer. architecture, 14,pp.1–16,Apr.2024. overallattainsthehighestperformance,withamaximumaccu- [16] K.L.Tan,C.P.Lee,andK.M.Lim,“RoBERTa-GRU:Ahybriddeep learningmodelforenhancedsentimentanalysis,”AppliedSciences,vol. racyof91.0.Thisisbecauseofitseffectiveness.topretraining 13,no.6,pp.1–18,Mar.2023. on Twitter data and its capability to pretrain on large scale [17] M. Boukabous and M. Azizi, “Crime prediction using a hybrid senti- data.contextualrelationshipsbasedonselfattention.However ment analysis approach based on bidirectional encoder representations from transformers,” Indonesian Journal of Electrical Engineering and There are difficulties in using complex models transformers ComputerScience,vol.25,no.2,pp.1–12,Feb.2022. would bringinterpretability. This shortcoming isovercome by [18] F. Barbieri, L. Espinosa-Anke, and J. Camacho-Collados, “XLM-T: useofSHAPbasedexplainabilitythatgivesoutexplicittoken Multilingual language models in Twitter for sentiment analysis and beyond,” in Proc. Language Resources and Evaluation Conf. (LREC), level understandings of behavior on predictions. 2022,pp.258–266. On the whole the proposed framework creates an equi- [19] A. P. Rodrigues et al., “Real-time Twitter spam detection and sen- librium between Making it well predictive performance and timent analysis using machine learning and deep learning techniques (retracted),”ComputationalIntelligenceandNeuroscience,2022",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "a88c857663fd523eeb817773c94c6d11",
+    "page": 6,
+    "text": "[PAGE: 6]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\n. interpretability appropriate to real world sentiment analysis. [20] H.T.andM.M.,“Artificialintelligenceandsentimentanalysis:Areview Futureworkareabletoinvestigatemoresuccessfulapproaches incompetitiveresearch,”Computers,vol.12,no.2,pp.1–20,Feb.2023. to neutral sentiment management class imbalance as well as [21] A.Kumar,S.Verma,andR.Singh,“TF-IDFbasedtextrepresentation forsentimentclassification,”IEEEAccess,2022. extrapolating the framework to multilingual and cross-domain [22] A. Vaswani et al., “Attention is all you need,” in Advances in Neural social media data. InformationProcessingSystems(NeurIPS),2017,pp.5998–6008.",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  },
+  {
+    "chunk_id": "b0f61c91670c46a210dbb5abd65b6438",
+    "page": 7,
+    "text": "[PAGE: 7]\n[CHUNK TYPE: PARAGRAPH]\n\nPARAGRAPH:\nC.M.Bishop,PatternRecognitionandMachineLearning.NewYork, [23] NY,USA:Springer,2006. [24] S.M.LundbergandS.-I.Lee,“Aunifiedapproachtointerpretingmodel Advances in Neural Information Processing Systems predictions,” in (NeurIPS),2017,pp.4765–4774. [25] D.Q.Nguyen,T.Vu,andA.T.Nguyen,“BERTweet:Apre-trainedlan- guagemodelforEnglishtweets,”inProceedingsofthe2020Conference onEmpiricalMethodsinNaturalLanguageProcessing(EMNLP),2020, pp.9–14.",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "paragraph"
+  },
+  {
+    "chunk_id": "bc7b2e27e2970474b7a48d3cf263a555",
+    "page": 7,
+    "text": "[PAGE: 7]\n[CHUNK TYPE: FULL_TEXT_FALLBACK]\n\n[23] C.M.Bishop,PatternRecognitionandMachineLearning.NewYork, NY,USA:Springer,2006. [24] S.M.LundbergandS.-I.Lee,“Aunifiedapproachtointerpretingmodel predictions,” in Advances in Neural Information Processing Systems (NeurIPS),2017,pp.4765–4774. [25] D.Q.Nguyen,T.Vu,andA.T.Nguyen,“BERTweet:Apre-trainedlan- guagemodelforEnglishtweets,”inProceedingsofthe2020Conference onEmpiricalMethodsinNaturalLanguageProcessing(EMNLP),2020, pp.9–14.",
+    "citations": [],
+    "contains_table": false,
+    "contains_figure": false,
+    "chunk_type": "full_text_fallback"
+  }
+]

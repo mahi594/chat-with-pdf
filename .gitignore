@@ -33,3 +33,6 @@ dist/
 
 # Node modules (if using frontend)
 node_modules/
+
+frontend/node_modules/
+frontend/.next/

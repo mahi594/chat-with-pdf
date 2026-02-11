@@ -1,4 +1,16 @@
+fastapi
+uvicorn
+python-dotenv
 pdfplumber
 pytesseract
+opencv-python-headless
+numpy
 Pillow
-python-dotenv
+langchain
+langchain-community
+langchain-groq
+chromadb
+sentence-transformers
+requests
+pydantic
+pymupdf
