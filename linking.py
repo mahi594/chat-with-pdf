@@ -343,6 +343,13 @@ def build_phase4_links(pdf_path, output_json_path):
 
     print("\n✅ Universal Phase 4 Linking Completed.")
     print("📌 Output saved at:", output_json_path)
+    
+    return {
+        "total_pages": total_pages,
+        "text_blocks": sum(len(p.get("blocks", [])) for p in output["pages"]),
+        "tables": sum(len(p.get("tables_found", [])) for p in output["pages"]),
+        "images_found": sum(len(p.get("images_found", [])) for p in output["pages"]),
+    }
 
 
 if __name__ == "__main__":
@@ -350,7 +357,7 @@ if __name__ == "__main__":
     file_hash = "962ae562ca933789fddeee27ca086458"
 
     pdf_path = f"data/uploads/{file_hash}.pdf"
-    output_path = f"data/cache/{file_hash}_phase4_universal.json"
+    output_path = f"data/cache/{file_hash}_phase4.json"
 
     if not os.path.exists(pdf_path):
         raise FileNotFoundError(f"❌ PDF not found: {pdf_path}")
